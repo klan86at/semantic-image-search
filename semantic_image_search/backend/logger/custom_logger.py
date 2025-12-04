@@ -34,7 +34,7 @@ class CustomLogger:
         # Configure structlog for JSON structured logging
         structlog.configure(
             processors=[
-                structlog.processors.TimeStamper(fmt="iso", utc=true, key="timestamp"),
+                structlog.processors.TimeStamper(fmt="iso", utc=True, key="timestamp"),
                 structlog.preprocessors.add_log_level,
                 structlog.processors.EventRenamer(to="event"),
                 structlog.processors.JSONRenderer(),
